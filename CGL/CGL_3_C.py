@@ -4,15 +4,8 @@ import time
 import pprint
 
 input_txt = """
-8
-0 0 4 0 1 1 3 1
-0 0 4 0 1 1 0 2
-0 0 4 0 0 1 -2 1
-0 0 4 0 -2 0 -1 0
-0 0 4 0 0 -1 0 -2
-0 0 4 0 2 -2 3 -1
-0 0 4 0 5 2 5 -2
-0 0 4 0 1 -1 3 -4
+50 20 21
+41 11 29
 """
 
 sys.stdin = io.StringIO(input_txt); tmp = input()
@@ -22,7 +15,7 @@ start = time.time()
 # copy the below part and paste to the submission form.
 # ---------function------------
 import math
-from typing import Union
+from typing import Union, Tuple
 
 
 class Point(object):
@@ -64,6 +57,13 @@ class Vector(Point):
 
     def cross(self, other):
         return self.x * other.y - self.y * other.x
+
+    def arg(self) -> float:
+        return math.atan2(self.y, self.x)
+
+    @staticmethod
+    def polar(r, theta) -> Point:
+        return Point(r * math.cos(theta), r * math.sin(theta))
 
     def __repr__(self):
         return f"{self.pt1},{self.pt2}"
@@ -139,14 +139,53 @@ class Segment(Vector):
         return f"{self.pt1},{self.pt2}"
 
 
-def main():
-    num_query = int(input())
-    for i in range(num_query):
-        p0_x, p0_y, p1_x, p1_y, p2_x, p2_y, p3_x, p3_y = map(int, input().split())
-        seg_1 = Segment(Point(p0_x, p0_y), Point(p1_x, p1_y))
-        seg_2 = Segment(Point(p2_x, p2_y), Point(p3_x, p3_y))
+class Circle(Point):
+    __slots__ = ['x', 'y', 'r']
+    def __init__(self, x, y, r):
+        super().__init__(x, y)
+        self.r = r
 
-        print(f'{seg_1.distance_to_segment(seg_2):.10f}')
+    def cross_point_with_circle(self, other) -> Tuple[Point, Point]:
+        vec_self_to_other = Vector(self, other)
+        vec_abs = vec_self_to_other.abs()
+        # if vec_abs > (self.r + other.r):
+        #     raise AssertionError
+        t = ((pow(self.r, 2) - pow(other.r, 2)) / pow(vec_abs, 2) + 1) / 2
+        pt = (other - self) * t
+        abs_from_pt = math.sqrt(pow(self.r, 2) - pt.norm())
+        inv = Point(vec_self_to_other.y / vec_abs,  - vec_self_to_other.x / vec_abs) * abs_from_pt
+        pt_ = self + pt
+        return (pt_ + inv), (pt_ - inv)
+
+    def cross_point_with_circle2(self, other) -> Tuple[Point, Point]:
+        vec_self_to_other = Vector(self, other)
+        vec_abs = vec_self_to_other.abs()
+        # if vec_abs > (self.r + other.r):
+        #     raise AssertionError
+
+        theta_base_to_other = vec_self_to_other.arg()
+        theta_other_to_pt = math.acos((pow(self.r, 2) + pow(vec_abs, 2) - pow(other.r, 2)) / (2 * self.r * vec_abs))
+
+        return self + Vector.polar(self.r, theta_base_to_other + theta_other_to_pt),\
+               self + Vector.polar(self.r, theta_base_to_other - theta_other_to_pt)
+
+    def __repr__(self):
+        return f"({self.x},{self.y}), {self.r}"
+
+
+def main():
+    c1x, c1y, c1r = map(int, input().split())
+    c2x, c2y, c2r = map(int, input().split())
+
+    pt1, pt2 = Circle(c1x, c1y, c1r).cross_point_with_circle2(Circle(c2x, c2y, c2r))
+
+    if pt1.x > pt2.x or (pt1.x == pt2.x and pt1.y > pt2.y):
+        tmp = pt1
+        pt1 = pt2
+        pt2 = tmp
+
+    print(" ".join(map('{:.10f}'.format, [pt1.x, pt1.y, pt2.x, pt2.y])))
+
     return
 
 
