@@ -131,74 +131,86 @@
 
 ### CGL (Computational geometry)
 
-| ID | Title|||
-|:---|:---|:---|:---|
-|CGL_1_A|Projection                                  |✓|
-|CGL_1_B|Reflection                                  ||
-|CGL_1_C|Counter-Clockwise                           ||
-|CGL_2_A|Parallel/Orthogonal                         |✓|
-|CGL_2_B|Intersection                                ||
-|CGL_2_C|Cross Point                                 ||
-|CGL_2_D|Distance                                    ||
+| ID | Title||
+|:---|:---|:---|
+|CGL_1_A|Projection                                  |射影|
+|CGL_1_B|Reflection                                  |反射|
+|CGL_1_C|Counter-Clockwise                           |反時計回り(3点の位置関係)|
+|CGL_2_A|Parallel/Orthogonal                         |直線の直交・平行判定|
+|CGL_2_B|Intersection                                |線分の交差判定|
+|CGL_2_C|Cross Point                                 |線分の交点|
+|CGL_2_D|Distance                                    |線分と線分の距離|
 |CGL_3_A|Area                                        ||
 |CGL_3_B|Is-Convex                                   ||
-|CGL_3_C|Polygon-Point Containment                   ||
-|CGL_4_A|Convex Hull                                 ||
+|CGL_3_C|Polygon-Point Containment                   |多角形内への点の内包|
+|CGL_4_A|Convex Hull                                 |凸包|
 |CGL_4_B|Diameter of a Convex Polygon                ||
 |CGL_4_C|Convex Cut                                  ||
 |CGL_5_A|Closest Pair                                ||
-|CGL_6_A|Segment Intersections, Manhattan Geometry   ||
+|CGL_6_A|Segment Intersections, Manhattan Geometry   |線分交差問題|
 |CGL_7_A|Intersection                                ||
-|CGL_7_D|Cross Points of a Circle and a Line         ||
-|CGL_7_E|Cross Points of Circles                     ||
+|CGL_7_D|Cross Points of a Circle and a Line         |円と直線の交点|
+|CGL_7_E|Cross Points of Circles                     |円と円の交点|
 |CGL_7_F|Tangent to a Circle                         ||
 |CGL_7_G|Common Tangent                              ||
 |CGL_7_H|Intersection of a Circle and a Polygon      ||
 
-- CGL_1_A  Projection  
-    射影  
-    点p1,p2を通る直線に対して点pから引いた垂線とその直線の交点の座標を求める  
+- CGL_1_A  Projection   射影  
+    点p1,p2を通る直線に対して点pから引いた垂線とその直線の交点の座標を求める。  
     
-- CGL_1_B  Reflection  
-    反射  
-    点pから点p1,p2を通る直線に対して線対称の位置にある座標を求める  
+- CGL_1_B  Reflection  反射  
+    点pから点p1,p2を通る直線に対して線対称の位置にある座標を求める。  
     
-- CGL_1_C  Counter-Clockwise  
+- CGL_1_C  Counter-Clockwise 反時計回り  
+    点p2が端点を(p0,p1)とする線分sに対して  
+    1:反時計回り、2:時計回り、3:線分上、4:点p0側の線分sの延長線上、5:点p1側の線分sの延長線上   
+    のいずれの位置にあるか判定する。  
+    
+- CGL_2_A  Parallel/Orthogonal  直線の直交・平行判定  
+    点p0,p1を通る直線と点p2,p3を通る直線が直交か平行かそのどちらでもないか判定する。  
+    
+- CGL_2_B  Intersection  線分の交差判定  
+    線分s1の端点を(p0,p1)、線分s2の端点を(p2,p3)としたとき、線分s1,s2が交差するか判定する。  
+    
+- CGL_2_C  CrossPoint  線分の交点  
+    線分s1の端点を(p0,p1)、線分s2の端点を(p2,p3)としたとき、線分s1,s2の交点を求める。
 
-- CGL_2_A  Parallel/Orthogonal  
-    直線の直交・平行判定  
-    点p0,p1を通る直線と点p2,p3を通る直線が直交か平行かそのどちらでもないか判定する  
-    
-- CGL_2_B  Intersection  
-    線分の交差判定  
-    線分s1の端点を(p0,p1)、線分s2の端点を(p2,p3)としたとき、線分s1,s2が交差するか判定する。
-    
-- CGL_2_C  CrossPoint
-- CGL_2_D  Distance  
-    線分と線分の距離
-    線分s1の端点を(p0,p1)、線分s2の端点を(p2,p3)としたときの線分s1,s2の間の距離を求める。
+- CGL_2_D  Distance  線分と線分の距離  
+    線分s1の端点を(p0,p1)、線分s2の端点を(p2,p3)としたときの線分s1,s2の間の距離を求める。  
+
 <!--
 - CGL_3_A  Area  
 - CGL_3_B  Is-Convex  
-- CGL_3_C  Polygon-PointContainment  
-- CGL_4_A  ConvexHull  
+-->
+- CGL_3_C  Polygon-PointContainment  点の内包  
+    点pが多角形g(凸包ではない)の内部にあるかどうか判定する。
+    
+- CGL_4_A  ConvexHull   凸包  
+    与えられた点の集合Pから集合Pの凸包体を構成する点を選択する。
+<!--
 - CGL_4_B  DiameterofaConvexPolygon  
 - CGL_4_C  ConvexCut  
 - CGL_5_A  ClosestPair  
-- CGL_6_A  SegmentIntersections,ManhattanGeometry  
+-->
+
+- CGL_6_A  SegmentIntersections,ManhattanGeometry  線分交差問題
+    平行または垂直の合計n本の線分がもつ交点の数を数える。
+    
+<!--    
 - CGL_7_A  Intersection  
-- CGL_7_D  CrossPointsofaCircleandaLine  
-- CGL_7_E  CrossPointsofCircles  
+-->
+
+- CGL_7_D  CrossPointsofaCircleandaLine  円と直線の交点  
+    中心座標を(cx,cy)長さをcrとする円と、点p0,p1を通る直線Line_iの交点を求める。
+    
+- CGL_7_E  CrossPointsofCircles  円と円の交点  
+    中心座標を(c1x,c1y)長さをc1rとする円c1と中心座標を(c2x,c2y)長さをc2rとする円c2の交点を求める。
+    
+<!--
 - CGL_7_F  TangenttoaCircle  
 - CGL_7_G  CommonTangent  
 - CGL_7_H  IntersectionofaCircleandaPolygon  
 -->
-
----
-
-
-
-
 
 ---
 
@@ -220,7 +232,7 @@
 
 
 ---
-# Link
+# Link 
 [1]:http://judge.u-aizu.ac.jp/onlinejudge/index.jsp
 [2]:https://onlinejudge.u-aizu.ac.jp/home
 [3]:http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#all
