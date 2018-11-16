@@ -4,24 +4,12 @@ import time
 import pprint
 
 input_txt = """
-4
+5
+1 2
+0 1
 0 0
-3 1
-3 3
-0 3
-12
-3 1
-3 2
-0 3
-0 2
-2 0
-4 1
--1 1
-0 -1
-1 4
-3 4
-4 3
--2 3
+1 1
+-1 2
 """
 
 sys.stdin = io.StringIO(input_txt); tmp = input()
@@ -31,7 +19,7 @@ start = time.time()
 # copy the below part and paste to the submission form.
 # ---------function------------
 import math
-from typing import Union, Tuple
+from typing import Union, Tuple, List
 
 class Point(object):
     __slots__ = ['x', 'y']
@@ -197,6 +185,7 @@ class Polygon(object):
 
     def contains_point(self, pt: Point) -> int:
         """
+        The coordinates of points must be given in the order of visit of them.
         {0:"not contained", 1: "on a edge", 2:"contained"}
         """
         cross_count = 0
@@ -215,24 +204,65 @@ class Polygon(object):
                 cross_count += 1
         return [0, 2][cross_count % 2]
 
+    @staticmethod
+    def can_form_convex(pt_a: Point, pt_mid: Point, pt_b: Point) -> bool:
+        vec_a = Vector(pt_mid, pt_a)
+        vec_b = Vector(pt_mid, pt_b)
+
+        if vec_a.cross(vec_b) >= 0:
+            return True
+        else:
+            return False
+
+    @staticmethod
+    def append_convex_vertex(vertices, convex_full):
+        not_used_vertices = []
+        for vtx in vertices:
+            if len(convex_full) >= 2:
+                for j in range(1, len(convex_full))[::-1]:
+                    if Polygon.can_form_convex(convex_full[j-1], convex_full[j], vtx):
+                        break
+                    not_used_vertices.append(convex_full.pop())
+            convex_full.append(vtx)
+        return not_used_vertices
+
+    @staticmethod
+    def convex_full(vertices: List[Point]) -> List[Point]:
+        # leftmost Point
+        vertices.sort(key=lambda pt: (pt.x, pt.y))
+        convex_full = []
+        # form upper convex full
+        not_used_vertices = Polygon.append_convex_vertex(vertices, convex_full)
+
+        # form lower convex full
+        not_used_vertices.sort(key=lambda pt: (pt.x, pt.y), reverse=True)
+        not_used_vertices.append(vertices[0])
+        #print(convex_full, not_used_vertices)
+        _ = Polygon.append_convex_vertex(not_used_vertices, convex_full)
+
+        return convex_full[:-1]
+
     def __repr__(self):
         return f"{self.vertices}"
 
 
 def main():
     num_vertices = int(input())
-    polygon_vertices = []
+    vertices = []
     for i in range(num_vertices):
         pt_x, pt_y = map(int, input().split())
-        polygon_vertices.append(Point(pt_x, pt_y))
+        vertices.append(Point(pt_x, pt_y))
 
-    polygon = Polygon(polygon_vertices)
+    convex_full = Polygon.convex_full(vertices)
 
-    num_queries = int(input())
-    for i in range(num_queries):
-        pt_x, pt_y = map(int, input().split())
-        print(polygon.contains_point(Point(pt_x, pt_y)))
-    return
+    start_vtx = sorted(convex_full, key=lambda pt: (pt.y, pt.x))[0]
+    id = convex_full.index(start_vtx)
+    n = len(convex_full)
+
+    print(n)
+    for i in range(n):
+        pt = convex_full[(id-i) % n]
+        print(f'{pt.x} {pt.y}')
 
 
 main()
