@@ -25,7 +25,7 @@
 | ID | Title|||
 |:---|:---|:---|:---|
 |ALDS1_1_A|Insertion Sort||
-|ALDS1_1_B|Greatest Common Divisor||
+|ALDS1_1_B|Greatest Common Divisor|最大公約数|
 |ALDS1_1_C|Prime Numbers||
 |ALDS1_1_D|Maximum Profit||
 |ALDS1_2_A|Bubble Sort||
@@ -103,7 +103,79 @@
 |DSL_5_A|The Maximum Number of Customers||
 |DSL_5_B|The Maximum Number of Overlaps||
 
-### DSL (Discrete Optimization)
+### DSL (Data Sets and Queries)
+
+### DPL (Discrete Optimization)
+
+| ID | Title||  
+|:---|:---|:---|  
+|DPL_1_A|Coin Changing Problem               |コイン問題||  
+|DPL_1_B|0-1 Knapsack Problem                |0-1ナップザック問題|  
+|DPL_1_C|Knapsack Problem                    ||  
+|DPL_1_D|Longest Increasing Subsequence      |最長増加部分列|  
+|DPL_1_E|Edit Distance (Levenshtein Distance)||  
+|DPL_1_F|0-1 Knapsack Problem II             ||  
+|DPL_1_G|Knapsack Problem with Limitations   ||  
+|DPL_1_H|Huge Knapsack Problem               ||  
+|DPL_1_I|Knapsack Problem with Limitations II||  
+|DPL_2_A|Traveling Salesman Problem          ||  
+|DPL_2_B|Chinese Postman Problem             ||  
+|DPL_2_C|Bitonic Traveling Salesman Problem  ||  
+|DPL_3_A|Largest Square                      |最大正方形|  
+|DPL_3_B|Largest Rectangle                   |最大長方形|  
+|DPL_3_C|Largest Rectangle in a Histogram    ||  
+|DPL_4_A|Coin Combination Problem            ||  
+|DPL_4_B|Coin Combination Problem II         ||  
+|DPL_5_A|Balls and Boxes 1                   ||  
+|DPL_5_B|Balls and Boxes 2                   ||  
+|DPL_5_C|Balls and Boxes 3                   ||  
+|DPL_5_D|Balls and Boxes 4                   ||  
+|DPL_5_E|Balls and Boxes 5                   ||  
+|DPL_5_F|Balls and Boxes 6                   ||  
+|DPL_5_G|Balls and Boxes 7                   ||  
+|DPL_5_H|Balls and Boxes 8                   ||  
+|DPL_5_I|Balls and Boxes 9                   ||  
+|DPL_5_J|Balls and Boxes 10                  ||  
+|DPL_5_K|Balls and Boxes 11                  ||  
+|DPL_5_L|Balls and Boxes 12                  ||  
+
+<!--
+- DPL_1_A  Coin Changing Problem コイン問題  
+
+- DPL_1_B  0-1 Knapsack Problem 0-1ナップザック問題  
+
+- DPL_1_C  Knapsack Problem
+- DPL_1_D  Longest Increasing Subsequence  最長増加部分列  
+
+- DPL_1_E  Edit Distance (Levenshtein Distance)
+- DPL_1_F  0-1 Knapsack Problem II
+- DPL_1_G  Knapsack Problem with Limitations
+- DPL_1_H  Huge Knapsack Problem
+- DPL_1_I  Knapsack Problem with Limitations II
+- DPL_2_A  Traveling Salesman Problem
+- DPL_2_B  Chinese Postman Problem
+- DPL_2_C  Bitonic Traveling Salesman Problem
+- DPL_3_A  Largest Square  最大正方形  
+
+- DPL_3_B  Largest Rectangle  最大長方形  
+
+- DPL_3_C  Largest Rectangle in a Histogram
+- DPL_4_A  Coin Combination Problem
+- DPL_4_B  Coin Combination Problem II
+- DPL_5_A  Balls and Boxes 1
+- DPL_5_B  Balls and Boxes 2
+- DPL_5_C  Balls and Boxes 3
+- DPL_5_D  Balls and Boxes 4
+- DPL_5_E  Balls and Boxes 5
+- DPL_5_F  Balls and Boxes 6
+- DPL_5_G  Balls and Boxes 7
+- DPL_5_H  Balls and Boxes 8
+- DPL_5_I  Balls and Boxes 9
+- DPL_5_J  Balls and Boxes 10
+- DPL_5_K  Balls and Boxes 11
+- DPL_5_L  Balls and Boxes 12
+-->
+
 
 ### GRL (Graph Algorithms)
 
@@ -127,7 +199,6 @@
 |GRL_6_A|Maximum Flow|
 |GRL_6_B|Minimum Cost Flow|
 |GRL_7_A|Bipartite Matching|
-
 
 ### CGL (Computational geometry)
 
@@ -214,20 +285,28 @@
 
 ---
 
-### NTL (Number Theory)  
+### NTL (Elementary Number Theory)  
 
 | ID | Title||
 |:---|:---|:---|
-|NTL_1_A|Prime Factorize|
-|NTL_1_B|Power|
-|NTL_1_C|Least Common Multiple|
-|NTL_1_D|Euler's Phi Function|
-|NTL_1_E|Extended Euclid Algorithm|
+|NTL_1_A|Prime Factorize|素数判定|
+|NTL_1_B|Power|べき乗|
+|NTL_1_C|Least Common Multiple||
+|NTL_1_D|Euler's Phi Function||
+|NTL_1_E|Extended Euclid Algorithm||
 
 
+- NTL_1_A  Prime Factorize　素数判定  
+    整数nを素因数分解する  
+    
+- NTL_1_B  Power  べき乗  
 
 
-
+<!--
+- NTL_1_C  Least Common Multiple  最小公倍数  
+- NTL_1_D  Euler's Phi Function  オイラーのφ関数  
+- NTL_1_E  Extended Euclid Algorithm  拡張ユークリッドの互除法  
+-->
 
 
 
