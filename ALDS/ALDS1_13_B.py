@@ -4,9 +4,9 @@ import time
 import pprint
 
 input_txt = """
-4 2 0
-7 3 1
-6 5 8
+6 4 7
+8 5 0
+3 2 1
 """
 
 sys.stdin = io.StringIO(input_txt); tmp = input()
@@ -15,50 +15,38 @@ sys.stdin = io.StringIO(input_txt); tmp = input()
 start = time.time()
 # copy the below part and paste to the submission form.
 # ---------function------------
-import copy
 from collections import deque
+import bisect
 
-CORRECT_STATE = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
-LIMIT = 100
+CORRECT_STATE = "123456780"
 
 class PuzzleState:
-    def __init__(self, state, depth=0):
+    def __init__(self, state: str, depth=0):
         self.state = state
-        for j in range(3):
-            for i in range(3):
-                if state[j][i] == 0:
-                    self.space_x = i
-                    self.space_y = j
+        index = state.find('0')
+        self.sp_x = index % 3
+        self.sp_y = index // 3
         self.depth = depth
         self.limit = 0
 
     def swap_state(self, x1, y1, x2, y2):
-        self.state[y1][x1], self.state[y2][x2] = self.state[y2][x2], self.state[y1][x1]
-        self.space_x, self.space_y = x2, y2
+        tmp = self.state[y2*3+x2]
+        self.state = self.state.replace('0', 'X')
+        self.state = self.state.replace(tmp, '0')
+        self.state = self.state.replace('X', tmp)
+        self.sp_x, self.sp_y = x2, y2
 
     def is_correct(self):
         return self.state == CORRECT_STATE
 
     def __repr__(self):
-        tmp =""
-        for j in range(3):
-            for i in range(3):
-                tmp += str(self.state[j][i])
-            #tmp += '\n'
-        return f'{tmp}'
+        return f'{self.state}'
 
 
-move = {'up': (0, -1), 'down': (0, 1), 'left': (-1, 0), 'right': (1, 0)}
-# directions_dict = {
-#     'init' : ['up', 'down', 'left', 'right'],
-#     'down' : [      'down', 'left', 'right'],
-#     'up'   : ['up'        , 'left', 'right'],
-#     'right': ['up', 'down'        , 'right'],
-#     'left' : ['up', 'down', 'left'         ]
-# }
+move = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+
 def move_space(puzzle: PuzzleState):
-    mem_state = []
-    mem_state.append(puzzle.state)
+    mem_state = [puzzle.state]
     p_queue = deque()
     p_queue.append(puzzle)
 
@@ -67,18 +55,19 @@ def move_space(puzzle: PuzzleState):
         if u.is_correct():
             #print("CORRECT")
             return u.depth
-        for direction in ['up', 'down', 'left', 'right']:
-            mx, my = move[direction]
-            space_new_x, space_new_y = u.space_x + mx, u.space_y + my
+        for mx, my in move:
+            space_new_x = u.sp_x + mx
+            space_new_y = u.sp_y + my
 
             if not(0 <= space_new_x <= 2 and 0 <= space_new_y <= 2):
                 continue
-            tmp = PuzzleState(u.state,depth=u.depth+1)
-            tmp.state = copy.deepcopy(u.state)
-            tmp.swap_state(tmp.space_x, tmp.space_y, space_new_x, space_new_y)
+            tmp = PuzzleState(u.state, depth=u.depth+1)
+            tmp.swap_state(tmp.sp_x, tmp.sp_y, space_new_x, space_new_y)
 
-            if tmp.state not in mem_state:
-                mem_state.append(tmp.state)
+            idx = bisect.bisect_left(mem_state, tmp.state)
+            if idx == len(mem_state) or mem_state[idx] != tmp.state:
+                mem_state.insert(idx, tmp.state)
+                #bisect.insort_left(mem_state, tmp.state)
                 p_queue.append(tmp)
     return False
 
@@ -88,12 +77,12 @@ def solve_puzzle(input_state):
 
 
 def main():
-    tmp = [input().split() for x in range(3)]
-    input_state = [[int(tmp[j][i]) for i in range(3)] for j in range(3)]
-
+    intext =""
+    for i in range(3):
+        intext += "".join(input().split())
 
     # 8 puzzle
-    ans_puzzle = solve_puzzle(input_state)
+    ans_puzzle = solve_puzzle(intext)
     print(ans_puzzle)
 
 
