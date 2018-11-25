@@ -32,7 +32,7 @@
 |ITP1_1_D|Watch                         |時計|
 |ITP1_2_A|Small, Large, or Equal        |大小関係|
 |ITP1_2_B|Range                         |範囲|
-|ITP1_2_C|Sorting Three Numbers         |3つの数の整列|テストケースに辞書順ソートでも正解するものしかない
+|ITP1_2_C|Sorting Three Numbers         |3つの数の整列|
 |ITP1_2_D|Circle in a Rectangle         |長方形の中の円判定|
 |ITP1_3_A|Print Many Hello World        |複数のHello Worldの出力|
 |ITP1_3_B|Print Test Cases              |テストケースの出力|
@@ -86,8 +86,8 @@
 |ALDS1_2_B|Selection Sort                     |選択ソート|
 |ALDS1_2_C|Stable Sort                        |安定なソート|
 |ALDS1_2_D|Shell Sort                         |シェルソート|
-|ALDS1_3_A|Stack                              ||
-|ALDS1_3_B|Queue                              ||
+|ALDS1_3_A|Stack                              |スタック|
+|ALDS1_3_B|Queue                              |キュー|
 |ALDS1_3_C|Doubly Linked List                 |双方向連結リスト|
 |ALDS1_3_D|Areas on the Cross-Section Diagram |水たまりの面積|
 |ALDS1_4_A|Linear Search                      |線形探索|
@@ -109,7 +109,7 @@
 |ALDS1_8_A|Binary Search Tree I               |二分探索木の構築|
 |ALDS1_8_B|Binary Search Tree II              |二分探索木で値の検索|
 |ALDS1_8_C|Binary Search Tree III             |二分探索木の節点の削除|
-|ALDS1_8_D|Treap(tree+heap)                   |二分木を平衡に保つ|
+|ALDS1_8_D|Treap(tree+heap)                   |二分木を平衡に保つ(Treap)|
 |ALDS1_9_A|Complete Binary Tree               |完全二分木|
 |ALDS1_9_B|Maximum Heap                       |max-ヒープ|
 |ALDS1_9_C|Priority Queue                     |優先度付きキュー|
@@ -128,7 +128,7 @@
 |ALDS1_13_B|8 Puzzle                          |8パズル|
 |ALDS1_13_C|15 Puzzle                         |15パズル|
 |ALDS1_14_A|Naive String Search               |二つの文字列の一致部分|
-|ALDS1_14_B|String Search                     |ALDS1_14_Bの大規模版|
+|ALDS1_14_B|String Search                     |二つの文字列の一致部分(大規模)|
 |ALDS1_14_C|Pattern Search                    |数列のパターン検索|
 |ALDS1_14_D|Multiple String Matching          |複数回の文字列検索(大規模)|
 
