@@ -136,6 +136,7 @@
     Introduction to Programming II
 
 AOJ ver.2だと後半の方がテストケースが見れなくなってる。(ver.1だと見れる)
+
 | ID | Title||
 |:---|:---|:---|
 |ITP2_1_A|Vector                      |可変長配列|
