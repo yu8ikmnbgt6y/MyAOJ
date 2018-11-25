@@ -22,7 +22,8 @@
 ---
 ### ITP1
     Introduction to Programming I
-    
+    プログラミング入門
+
 | ID | Title||
 |:---|:---|:---|
 |ITP1_1_A|Hello World                   |Hello Worldの出力|
@@ -73,6 +74,7 @@
 
 ### ALDS1
     Algorithms and Data Structures I
+    アルゴリズムとデータ構造入門
 
 | ID | Title||
 |:---|:---|:---|
@@ -134,6 +136,7 @@
 
 ### ITP2
     Introduction to Programming II
+    プログラミング応用
 
 AOJ ver.2だと後半の方がテストケースが見れなくなってる。(ver.1だと見れる)
 
@@ -192,47 +195,48 @@ AOJ ver.2だと後半の方がテストケースが見れなくなってる。(v
 |:---|:---|:---|
 |DSL_1_A|Disjoint Set: Union Find Tree   |互いに素な集合|
 |DSL_1_B|Weighted Union Find Trees       |重み付きUnion Find Tree|
-|DSL_2_A|Range Minimum Query (RMQ)       |与えられた区間における数列の最小値を求める|
-|DSL_2_B|Range Sum Query (RSQ)           |与えられた区間における数列の合計値を求める|
-|DSL_2_C|Range Search (kD Tree)          |与えられた領域に含まれる2次元平面の点の集合を求める|
+|DSL_2_A|Range Minimum Query (RMQ)       |数列のある区間における最小値を求める|
+|DSL_2_B|Range Sum Query (RSQ)           |数列のある区間における総和を求める|
+|DSL_2_C|Range Search (kD Tree)          |ある矩形領域に含まれる2次元平面の点の集合を探す|
 |DSL_2_D|Range Update Query (RUQ)        |数列の値の更新|
-|DSL_2_E|Range Add Query (RAQ)           |与えられた区間の全ての数に加算する|
+|DSL_2_E|Range Add Query (RAQ)           |数列の与えられた区間の全ての数に加算する|
 |DSL_2_F|RMQ and RUQ                     ||
 |DSL_2_G|RSQ and RAQ                     ||
 |DSL_2_H|RMQ and RAQ                     ||
 |DSL_2_I|RSQ and RUQ                     ||
-|DSL_3_A|The Smallest Window I           ||
-|DSL_3_B|The Smallest Window II          ||
-|DSL_3_C|The Number of Windows           ||
-|DSL_3_D|Sliding Minimum Elements        ||
-|DSL_4_A|Union of Rectangles             ||
-|DSL_5_A|The Maximum Number of Customers ||
-|DSL_5_B|The Maximum Number of Overlaps  ||
+|DSL_3_A|The Smallest Window I           |数列から総和がn以下になる最短の部分列を探す|
+|DSL_3_B|The Smallest Window II          |数列から1からnまでの全ての整数を持つ最短の部分列を探す|
+|DSL_3_C|The Number of Windows           |数列から総和がn以下の部分列の数をq回求める|
+|DSL_3_D|Sliding Minimum Elements        |数列の一定の長さの全ての部分列からその最小の要素の値を出力する|
+|DSL_4_A|Union of Rectangles             |平面上で1つ以上の長方形に覆われた部分の面積を求める|
+|DSL_5_A|The Maximum Number of Customers |客の来店・退店時間から最大来店人数を求める|
+|DSL_5_B|The Maximum Number of Overlaps  |平面上にあるn個の長方形が最大で何枚重なっているか求める|
 
 
 ### DPL
     Discrete Optimization
+    組み合わせ最適化
 
 | ID | Title||  
 |:---|:---|:---|  
-|DPL_1_A|Coin Changing Problem               |コイン問題|  
-|DPL_1_B|0-1 Knapsack Problem                |0-1ナップザック問題|  
-|DPL_1_C|Knapsack Problem                    ||  
-|DPL_1_D|Longest Increasing Subsequence      |最長増加部分列|  
-|DPL_1_E|Edit Distance (Levenshtein Distance)||  
-|DPL_1_F|0-1 Knapsack Problem II             ||  
-|DPL_1_G|Knapsack Problem with Limitations   ||  
-|DPL_1_H|Huge Knapsack Problem               ||  
-|DPL_1_I|Knapsack Problem with Limitations II||  
-|DPL_2_A|Traveling Salesman Problem          ||  
-|DPL_2_B|Chinese Postman Problem             ||  
-|DPL_2_C|Bitonic Traveling Salesman Problem  ||  
-|DPL_3_A|Largest Square                      |最大正方形|  
-|DPL_3_B|Largest Rectangle                   |最大長方形|  
-|DPL_3_C|Largest Rectangle in a Histogram    ||  
-|DPL_4_A|Coin Combination Problem            ||  
-|DPL_4_B|Coin Combination Problem II         ||  
-|DPL_5_A|Balls and Boxes 1                   ||  
+|DPL_1_A|Coin Changing Problem               |指定された額面のコインで支払いをするときの、コインの最小枚数を求める|  
+|DPL_1_B|0-1 Knapsack Problem                |0-1ナップザック問題(同じ種類の品物は一つだけ持っていける)|  
+|DPL_1_C|Knapsack Problem                    |ナップザック問題(同じ種類の品物をいくつでも持っていける)|  
+|DPL_1_D|Longest Increasing Subsequence      |数列の値が単調増加する最長の部分列|  
+|DPL_1_E|Edit Distance (Levenshtein Distance)|二つの文字列のレーベンシュタイン距離を求める|  
+|DPL_1_F|0-1 Knapsack Problem II             |0-1ナップザック問題(ナップザックが大容量)|  
+|DPL_1_G|Knapsack Problem with Limitations   |個数制限付きナップザック問題|  
+|DPL_1_H|Huge Knapsack Problem               |ナップザック問題(価値・容量が大規模)|  
+|DPL_1_I|Knapsack Problem with Limitations II|個数制限付きナップザック問題(個数・容量が大規模)|  
+|DPL_2_A|Traveling Salesman Problem          |巡回セールスマン問題|  
+|DPL_2_B|Chinese Postman Problem             |中国人郵便配達問題|  
+|DPL_2_C|Bitonic Traveling Salesman Problem  |バイトニック巡回セールスマン問題|  
+|DPL_3_A|Largest Square                      |2次元平面上に綺麗なタイルと汚いタイルが並んでいるとき、綺麗なタイルが作ることができる面積が最大の*正方形*|  
+|DPL_3_B|Largest Rectangle                   |2次元平面上に綺麗なタイルと汚いタイルが並んでいるとき、綺麗なタイルが作ることができる面積が最大の*長方形*|  
+|DPL_3_C|Largest Rectangle in a Histogram    |ヒストグラム中の面積が最大になる長方形|  
+|DPL_4_A|Coin Combination Problem            |いろんな種類の価値のコインが入っているN個の袋から1枚ずつコインをとりだして価値の総和がVになる組み合わせの数|  
+|DPL_4_B|Coin Combination Problem II         |価値の総和Vが区間\[L,R\]に納まるコインの組み合わせ|  
+|DPL_5_A|Balls and Boxes 1                   |[下記参照](#dpl_5)|  
 |DPL_5_B|Balls and Boxes 2                   ||  
 |DPL_5_C|Balls and Boxes 3                   ||  
 |DPL_5_D|Balls and Boxes 4                   ||  
@@ -244,6 +248,18 @@ AOJ ver.2だと後半の方がテストケースが見れなくなってる。(v
 |DPL_5_J|Balls and Boxes 10                  ||  
 |DPL_5_K|Balls and Boxes 11                  ||  
 |DPL_5_L|Balls and Boxes 12                  ||  
+
+
+#### DPL_5
+    箱にボールを入れるときに可能な入れ方の総数
+|ボール|箱|入れ方に制限なし|箱の中身は1つ以下|箱の中身は1つ以上|
+|:---|:---|:-:|:-:|:-:|
+|区別できる|区別できる|1|2|3|
+|区別できない|区別できる|4|5|6|
+|区別できる|区別できない|7|8|9|
+|区別できない|区別できない|10|11|12|
+
+
 
 <!--
 - DPL_1_A  Coin Changing Problem コイン問題  
