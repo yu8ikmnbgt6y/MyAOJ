@@ -10,36 +10,39 @@
 
 | ID | Course Title||
 |:---|:---|:---|
-|ITP1 |Introduction to Programming I    |プログラミング入門           |  
-|ALDS1|Algorithms and Data Structures I |アルゴリズムとデータ構造入門 | 
-|ITP2 |Introduction to Programming II   |プログラミング応用           |
-|DSL  |Data Sets and Queries            |データ集合とクエリ操作       | 
-|DPL  |Discrete Optimization            |組み合わせ最適化             | 
-|GRL  |Graph Algorithms                 |グラフ                       | 
-|CGL  |Computational Geometry           |計算幾何学                   | 
-|NTL  |Number Theory                    |整数論                       | 
+|ITP1 |[Introduction to Programming I](###ITP1)   |プログラミング入門|
+|ALDS1|[Algorithms and Data Structures](###ALDS1) |アルゴリズムとデータ構造入門|
+|ITP2 |[Introduction to Programming II](###ITP2)  |プログラミング応用|
+|DSL  |[Data Sets and Queries](###DSL)            |データ集合とクエリ操作|
+|DPL  |[Discrete Optimization](###DPL)            |組み合わせ最適化|
+|GRL  |[Graph Algorithms](###GRL)                 |グラフ|
+|CGL  |[Computational Geometry](###CGL)           |計算幾何学|
+|NTL  |[Number Theory](###NTL)                    |整数論|
 
-### ITP1 (Introduction to Programming I)
+---
+### ITP1
+    Introduction to Programming I
+    
 | ID | Title||
 |:---|:---|:---|
-|ITP1_1_A|Hello World                   ||
-|ITP1_1_B|X Cubic                       ||
-|ITP1_1_C|Rectangle                     ||
-|ITP1_1_D|Watch                         ||
-|ITP1_2_A|Small, Large, or Equal        ||
-|ITP1_2_B|Range                         ||
-|ITP1_2_C|Sorting Three Numbers         ||
-|ITP1_2_D|Circle in a Rectangle         ||
-|ITP1_3_A|Print Many Hello World        ||
-|ITP1_3_B|Print Test Cases              ||
-|ITP1_3_C|Swapping Two Numbers          ||
-|ITP1_3_D|How Many Divisors?            ||
-|ITP1_4_A|A / B Problem                 ||
-|ITP1_4_B|Circle                        ||
-|ITP1_4_C|Simple Calculator             ||
-|ITP1_4_D|Min, Max and Sum              ||
-|ITP1_5_A|Print a Rectangle             ||
-|ITP1_5_B|Print a Frame                 ||
+|ITP1_1_A|Hello World                   |Hello Worldの出力|
+|ITP1_1_B|X Cubic                       |xの3乗|
+|ITP1_1_C|Rectangle                     |長方形の面積と周の長さ|
+|ITP1_1_D|Watch                         |時計|
+|ITP1_2_A|Small, Large, or Equal        |大小関係|
+|ITP1_2_B|Range                         |範囲|
+|ITP1_2_C|Sorting Three Numbers         |3つの数の整列|テストケースに辞書順ソートでも正解するものしかない
+|ITP1_2_D|Circle in a Rectangle         |長方形の中の円判定|
+|ITP1_3_A|Print Many Hello World        |複数のHello Worldの出力|
+|ITP1_3_B|Print Test Cases              |テストケースの出力|
+|ITP1_3_C|Swapping Two Numbers          |2つの数の交換|
+|ITP1_3_D|How Many Divisors?            |約数の数|
+|ITP1_4_A|A / B Problem                 |割り算|
+|ITP1_4_B|Circle                        |円の面積と円周|
+|ITP1_4_C|Simple Calculator             |計算機|
+|ITP1_4_D|Min, Max and Sum              |最小値、最大値、合計値|
+|ITP1_5_A|Print a Rectangle             |長方形の描画|
+|ITP1_5_B|Print a Frame                 |フレームの描画|
 |ITP1_5_C|Print a Chessboard            ||
 |ITP1_5_D|Structured Programming        ||
 |ITP1_6_A|Reversing Numbers             ||
@@ -68,10 +71,11 @@
 |ITP1_11_D|Dice IV                      ||
 
 
-### ALDS1 (Algorithms and Data Structures I)
+### ALDS1
+    Algorithms and Data Structures I
 
-| ID | Title|||
-|:---|:---|:---|:---|
+| ID | Title||
+|:---|:---|:---|
 |ALDS1_1_A|Insertion Sort                     ||
 |ALDS1_1_B|Greatest Common Divisor            |最大公約数|
 |ALDS1_1_C|Prime Numbers                      |素数|
@@ -126,10 +130,11 @@
 |ALDS1_14_C|Pattern Search                    ||
 |ALDS1_14_D|Multiple String Matching          ||
 
-### ITP2 (Introduction to Programming II)
+### ITP2
+    Introduction to Programming II
 
-| ID | Title|||
-|:---|:---|:---|:---|
+| ID | Title||
+|:---|:---|:---|
 |ITP2_1_A|Vector                      ||
 |ITP2_1_B|Deque                       ||
 |ITP2_1_C|List                        ||
@@ -141,7 +146,7 @@
 |ITP2_3_A|Min-Max                     ||
 |ITP2_3_B|Min-Max Element             ||
 |ITP2_3_C|Count                       ||
-|ITP2_3_D|Lexicographical Comparison  ||
+|ITP2_3_D|Lexicographical Comparison  ||テストケース#10の入力は間違いか
 |ITP2_4_A|Reverse                     ||
 |ITP2_4_B|Rotate                      ||
 |ITP2_4_C|Swap                        ||
@@ -175,7 +180,8 @@
 |ITP2_11_C|Enumeration of Subsets III ||
 |ITP2_11_D|Enumeration of Combinations||
 
-### DSL (Data Sets and Queries)
+### DSL
+    Data Sets and Queries
 
 | ID | Title||
 |:---|:---|:---|
@@ -198,7 +204,8 @@
 |DSL_5_A|The Maximum Number of Customers ||
 |DSL_5_B|The Maximum Number of Overlaps  ||
 
-### DSL (Data Sets and Queries)
+### DSL
+    Data Sets and Queries
 
 | ID | Title||
 |:---|:---|:---|
@@ -223,7 +230,8 @@
 
 
 
-### DPL (Discrete Optimization)
+### DPL
+    Discrete Optimization
 
 | ID | Title||  
 |:---|:---|:---|  
@@ -295,7 +303,8 @@
 -->
 
 
-### GRL (Graph Algorithms)
+### GRL
+    Graph Algorithms
 
 | ID | Title||
 |:---|:---|:---|
@@ -318,7 +327,8 @@
 |GRL_6_B|Minimum Cost Flow                           ||
 |GRL_7_A|Bipartite Matching                          ||
 
-### CGL (Computational geometry)
+### CGL
+    Computational geometry
 
 | ID | Title||
 |:---|:---|:---|
@@ -331,7 +341,7 @@
 |CGL_2_D|Distance                                    |線分と線分の距離|
 |CGL_3_A|Area                                        ||
 |CGL_3_B|Is-Convex                                   ||
-|CGL_3_C|Polygon-Point Containment                   |多角形内への点の内包|
+|CGL_3_C|Polygon-Point Containment                   |多角形内の点の内包判定|
 |CGL_4_A|Convex Hull                                 |凸包|
 |CGL_4_B|Diameter of a Convex Polygon                ||
 |CGL_4_C|Convex Cut                                  ||
@@ -384,7 +394,8 @@
 
 ---
 
-### NTL (Elementary Number Theory)  
+### NTL
+    Elementary Number Theory  
 
 | ID | Title||
 |:---|:---|:---|
