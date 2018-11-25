@@ -11,13 +11,13 @@
 | ID | Course Title||
 |:---|:---|:---|
 |ITP1 |[Introduction to Programming I](###itp1)   |プログラミング入門|
-|ALDS1|[Algorithms and Data Structures](###ALDS1) |アルゴリズムとデータ構造入門|
-|ITP2 |[Introduction to Programming II](###ITP2)  |プログラミング応用|
-|DSL  |[Data Sets and Queries](###DSL)            |データ集合とクエリ操作|
-|DPL  |[Discrete Optimization](###DPL)            |組み合わせ最適化|
-|GRL  |[Graph Algorithms](###GRL)                 |グラフ|
-|CGL  |[Computational Geometry](###CGL)           |計算幾何学|
-|NTL  |[Number Theory](###NTL)                    |整数論|
+|ALDS1|[Algorithms and Data Structures](###alds1) |アルゴリズムとデータ構造入門|
+|ITP2 |[Introduction to Programming II](###itp2)  |プログラミング応用|
+|DSL  |[Data Sets and Queries](###dsl)            |データ集合とクエリ操作|
+|DPL  |[Discrete Optimization](###dpl)            |組み合わせ最適化|
+|GRL  |[Graph Algorithms](###grl)                 |グラフ|
+|CGL  |[Computational Geometry](###cgl)           |計算幾何学|
+|NTL  |[Number Theory](###ntl)                    |整数論|
 
 ---
 ### ITP1
